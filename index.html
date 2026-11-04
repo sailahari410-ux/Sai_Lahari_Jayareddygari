@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NO VANILLA. — Sai Lahari Jayareddygari · Brand Strategy, Creative Direction, Growth</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f6f1e9; --ink:#1d1b18; --muted:#6b645a; --line:#e2d9cb;
+    --ck:#1f5a4a; --ck-gold:#c9a23a;
+    --m3:#6a55a6; --m3-soft:#ece7f7;
+    --ts:#3f948f; --ts-soft:#f7e9ef;
+    --om:#e2583e; --om-soft:#fdf1e6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  .serif{font-family:Fraunces,Georgia,serif}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:20;background:rgba(246,241,233,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+  nav .mark{font-family:Fraunces,serif;font-size:22px;font-weight:500;text-decoration:none}
+  nav .links{display:flex;gap:26px;font-size:14px}
+  nav .links a{text-decoration:none;color:var(--muted)}
+  nav .links a:hover{color:var(--ink)}
+  @media(max-width:760px){nav .links{display:none}}
+
+  /* hero */
+  .hero{padding:110px 0 70px}
+  .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500}
+  .hero h1{font-family:Fraunces,serif;font-weight:300;font-size:clamp(42px,7vw,86px);line-height:1.02;letter-spacing:-.02em;margin:22px 0 28px;max-width:14ch}
+  .hero h1 em{font-style:italic;color:var(--ck)}
+  .hero h1.nv{font-family:Inter,sans-serif;font-weight:600;font-size:clamp(56px,12.5vw,168px);letter-spacing:-.055em;line-height:.88;max-width:none;margin:26px 0 22px}
+  .hero h1.nv .dot{color:var(--om)}
+  .tagline{font-family:Fraunces,serif;font-weight:300;font-size:clamp(24px,3.4vw,38px);line-height:1.2;margin-bottom:30px;letter-spacing:-.01em}
+  .tagline em{font-style:italic;color:var(--ck)}
+  .lede b{font-weight:600;color:var(--ink)}
+  .who{font-family:Fraunces,serif;font-size:clamp(22px,2.6vw,30px);font-weight:400;letter-spacing:-.01em;margin-bottom:10px}
+  .flavours{margin-top:46px}
+  .flavours h3{font-family:Fraunces,serif;font-weight:400;font-size:clamp(22px,2.6vw,28px);letter-spacing:-.01em}
+  .flavours h3 em{color:var(--om)}
+  .flavours > p{color:var(--muted);font-size:14.5px;margin-top:4px}
+  .fl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+  @media(max-width:860px){.fl-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.fl-grid{grid-template-columns:1fr}}
+  .fl{display:block;text-decoration:none;padding:16px 18px;border-radius:14px;background:#fffdf9;border:1px solid var(--line);border-top:4px solid var(--c);transition:transform .2s}
+  .fl:hover{transform:translateY(-3px)}
+  .fl b{display:block;font-family:Fraunces,serif;font-weight:500;font-size:19px}
+  .fl span{display:block;font-size:13px;color:var(--muted);margin-top:4px;line-height:1.45}
+  details.more{margin-top:14px;border:1px dashed var(--accent);border-radius:16px;padding:0 20px}
+  details.more summary{cursor:pointer;list-style:none;padding:18px 0;font-family:Fraunces,serif;font-size:19px;display:flex;justify-content:space-between;align-items:center}
+  details.more summary::-webkit-details-marker{display:none}
+  details.more summary small{font-family:Inter,sans-serif;font-size:13px;color:var(--muted);margin-left:10px}
+  details.more summary::after{content:"+";font-family:Inter,sans-serif;font-size:22px;color:var(--accent);transition:transform .2s}
+  details.more[open] summary::after{transform:rotate(45deg)}
+  details.more .reel-grid{padding-bottom:20px}
+  .marquee{overflow:hidden;background:var(--ink);color:var(--paper);padding:16px 0;white-space:nowrap}
+  .marquee div{display:inline-block;animation:mq 38s linear infinite;font-family:Fraunces,serif;font-size:20px;font-style:italic;font-weight:300}
+  .marquee span{margin:0 26px;font-style:normal;color:var(--ck-gold)}
+  @keyframes mq{to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){.marquee div{animation:none}}
+  .vs{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:18px;border-radius:12px;overflow:hidden;border:1px solid var(--line);font-size:13.5px}
+  .vs div{padding:12px 14px;line-height:1.45}
+  .vs div:first-child{background:#fffdf9;color:var(--muted)}
+  .vs div:last-child{background:#fff;color:var(--ink)}
+  .vs small{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:4px}
+  .vs div:last-child small{color:var(--accent)}
+  .hero p.lede{font-size:clamp(17px,2vw,20px);color:#3c3832;max-width:60ch}
+  .brands-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+  .chip{font-size:13px;padding:7px 14px;border-radius:99px;border:1px solid var(--line);background:#fff8;text-decoration:none}
+  .chip i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;vertical-align:1px}
+
+  /* stats */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:70px}
+  .stat{padding:30px 22px;border-right:1px solid var(--line)}
+  .stat:last-child{border-right:0}
+  .stat b{display:block;font-family:Fraunces,serif;font-weight:400;font-size:clamp(32px,4vw,48px);line-height:1;letter-spacing:-.02em}
+  .stat span{display:block;margin-top:10px;font-size:13.5px;color:var(--muted);line-height:1.45}
+  @media(max-width:760px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+  /* approach */
+  .approach{padding:90px 0 40px}
+  .approach h2,.section-title{font-family:Fraunces,serif;font-weight:400;font-size:clamp(28px,3.6vw,40px);letter-spacing:-.01em;line-height:1.15}
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px}
+  .pillar{padding:26px;border:1px solid var(--line);border-radius:16px;background:#fffdf9}
+  .pillar h3{font-size:15px;font-weight:600;margin-bottom:8px}
+  .pillar p{font-size:14.5px;color:var(--muted)}
+  @media(max-width:860px){.pillars{grid-template-columns:1fr}}
+
+  /* case studies */
+  .case{padding:90px 0;border-top:1px solid var(--line)}
+  .case-head{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start}
+  @media(max-width:860px){.case-head{grid-template-columns:1fr;gap:28px}}
+  .case .num{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--accent)}
+  .case h2{font-family:Fraunces,serif;font-weight:400;font-size:clamp(38px,5.4vw,64px);line-height:1;letter-spacing:-.02em;margin:14px 0 14px}
+  .case .tag{font-size:15px;color:var(--muted);max-width:44ch}
+  .role{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .role span{font-size:12.5px;padding:5px 11px;border-radius:99px;background:var(--soft);color:var(--accent);font-weight:500}
+  .meta{margin-top:24px;font-size:14px}
+  .meta a{color:var(--accent);font-weight:500;text-underline-offset:3px}
+  .challenge{background:var(--soft);border-radius:18px;padding:28px 30px}
+  .challenge h4{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .challenge p{font-family:Fraunces,serif;font-size:21px;line-height:1.4;font-weight:300}
+
+  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:44px 0}
+  .metric{border-left:3px solid var(--accent);padding:6px 0 6px 18px}
+  .metric b{display:block;font-family:Fraunces,serif;font-size:34px;font-weight:400;line-height:1.05;color:var(--accent)}
+  .metric span{font-size:13.5px;color:var(--muted);line-height:1.45;display:block;margin-top:6px}
+
+  .did{display:grid;grid-template-columns:1fr 1fr;gap:18px 44px;margin-top:10px}
+  @media(max-width:760px){.did{grid-template-columns:1fr}}
+  .did div h5{font-size:15px;font-weight:600;margin-bottom:4px}
+  .did div p{font-size:14.5px;color:#4a453e}
+
+  figure{margin-top:48px}
+  .shot{border-radius:18px;overflow:hidden;background:#111;box-shadow:0 30px 60px -30px rgba(0,0,0,.35);cursor:zoom-in}
+  .shot img{display:block;width:100%;height:auto}
+  figcaption{font-size:13px;color:var(--muted);margin-top:12px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:48px}
+  .two figure{margin-top:0}
+  @media(max-width:760px){.two{grid-template-columns:1fr}}
+
+  /* reels */
+  .reels{margin-top:56px}
+  .reels h3{font-family:Fraunces,serif;font-weight:400;font-size:26px;margin-bottom:6px}
+  .reels > p{color:var(--muted);font-size:14.5px;margin-bottom:22px}
+  .reel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+  .reel{display:flex;flex-direction:column;justify-content:space-between;min-height:150px;padding:20px;border-radius:16px;text-decoration:none;background:#fffdf9;border:1px solid var(--line);transition:transform .2s,border-color .2s}
+  .reel:hover{transform:translateY(-3px);border-color:var(--accent)}
+  .reel.feature{background:var(--ck);color:#f4ecd8;border-color:var(--ck)}
+  .reel .k{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;opacity:.75}
+  .reel .t{font-family:Fraunces,serif;font-size:20px;line-height:1.2;margin-top:8px}
+  .reel .go{font-size:13px;margin-top:18px;display:flex;align-items:center;gap:6px;font-weight:500}
+  .reel .play{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#fff;font-size:11px}
+  .reel.feature .play{background:var(--ck-gold);color:var(--ck)}
+
+  .bridge{margin-top:40px;padding:22px 26px;border-radius:16px;border:1px dashed var(--accent);font-size:15px}
+  .bridge b{color:var(--accent)}
+
+  /* footer */
+  .closing{padding:110px 0 120px;border-top:1px solid var(--line);text-align:center}
+  .closing h2{font-family:Fraunces,serif;font-weight:300;font-size:clamp(36px,5vw,60px);line-height:1.08;letter-spacing:-.02em;max-width:18ch;margin:0 auto 22px}
+  .closing h2 em{color:var(--ck)}
+  .closing p{color:var(--muted);max-width:52ch;margin:0 auto}
+  footer{border-top:1px solid var(--line);padding:26px 0;font-size:13px;color:var(--muted)}
+
+  /* lightbox */
+  .lb{position:fixed;inset:0;background:rgba(15,14,12,.92);display:none;align-items:center;justify-content:center;z-index:50;padding:24px;cursor:zoom-out}
+  .lb.on{display:flex}
+  .lb img{max-width:100%;max-height:100%;border-radius:10px}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="mark" href="#top" style="font-family:Inter,sans-serif;font-weight:600;letter-spacing:-.03em">NO VANILLA<span style="color:var(--om)">.</span></a>
+  <div class="links">
+    <a href="#coffee-katha">Coffee Kathà</a>
+    <a href="#mind-360">Mind 360</a>
+    <a href="#tesoul">TéSoul</a>
+    <a href="#open-minds">Open Minds</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div class="who">Sai Lahari Jayareddygari</div>
+  <div class="eyebrow">Brand Strategy · Creative Direction · Growth</div>
+  <h1 class="nv">NO VANILLA<span class="dot">.</span></h1>
+  <p class="tagline">No bland ideas. <em>No forgettable brands.</em></p>
+  <p class="lede">Hi, I'm <b>Sai Lahari</b>. I'm a brand strategist and creative lead from Hyderabad. I work with founders across F&amp;B, mental health, wellness and child development, and every time I'm working against the same thing: the safe, templated version of their brand. I find who the brand is really for, give it a flavour nobody else has, and build the content and campaigns that bring people in and keep them coming back.</p>
+  <div class="flavours">
+    <h3>Four brands. Four flavours. <em>Zero vanilla.</em></h3>
+    <p>Here's who I've worked with and what each one does.</p>
+    <div class="fl-grid">
+      <a class="fl" href="#coffee-katha" style="--c:var(--ck)"><b>Coffee Kathà</b><span>South Indian filter coffee café chain in Hyderabad</span></a>
+      <a class="fl" href="#mind-360" style="--c:var(--m3)"><b>Mind 360</b><span>Online therapy app for millennials and Gen Z</span></a>
+      <a class="fl" href="#tesoul" style="--c:var(--ts)"><b>TéSoul Blends</b><span>Ayurvedic-inspired premium wellness teas</span></a>
+      <a class="fl" href="#open-minds" style="--c:var(--om)"><b>Open Minds Child Vista</b><span>Child development and therapy centre</span></a>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>5 → 12</b><span>Coffee Kathà outlets, from 2025 to end of 2026</span></div>
+    <div class="stat"><b>100k+</b><span>views on a pre-launch reel that drove footfall at the new outlet</span></div>
+    <div class="stat"><b>+40%</b><span>more clients for Open Minds after targeted ad sets</span></div>
+    <div class="stat"><b>4 → 1</b><span>weeks to get a sensitive brand's social strategy off the ground</span></div>
+  </div>
+</div></header>
+
+<div class="marquee" aria-hidden="true"><div>
+  No bland ideas<span>✦</span>No forgettable brands<span>✦</span>Brand Strategy<span>✦</span>Creative Direction<span>✦</span>Growth<span>✦</span>No bland ideas<span>✦</span>No forgettable brands<span>✦</span>Brand Strategy<span>✦</span>Creative Direction<span>✦</span>Growth<span>✦</span>
+</div></div>
+
+<section class="approach"><div class="wrap reveal">
+  <div class="eyebrow">How I keep it un-vanilla</div>
+  <h2 style="margin-top:14px;max-width:24ch">Vanilla is safe. Safe is forgettable. So I start with people, not templates.</h2>
+  <div class="pillars">
+    <div class="pillar"><h3>Strategy · Audience before aesthetics</h3><p>I sit with founders, therapists, psychologists and product teams until I know exactly who the brand serves and what that person is going through.</p></div>
+    <div class="pillar"><h3>Creative Direction · Culture as the brief</h3><p>Filter-coffee rituals, Ayurveda, the small daily moments. I take what people already love and turn it into brand language that feels personal instead of templated.</p></div>
+    <div class="pillar"><h3>Growth · Creative that has to perform</h3><p>I own the whole chain, from concept to copy to Meta ad sets, budgets and optimisation, and I lead the team that delivers it.</p></div>
+  </div>
+</div></section>
+
+<!-- ============ COFFEE KATHÀ ============ -->
+<section class="case" id="coffee-katha" style="--accent:var(--ck);--soft:#e6eee9"><div class="wrap">
+  <div class="case-head reveal">
+    <div>
+      <div class="num">01 · F&amp;B · 2026 – present</div>
+      <h2>Coffee Kathà</h2>
+      <p class="tag">A South Indian filter coffee brand founded in 2020. I'm its creative and brand lead.</p>
+      <div class="role"><span>Brand positioning</span><span>Creative direction</span><span>Content &amp; copy</span><span>Meta ads</span><span>Team lead (4)</span></div>
+      <p class="meta"><a href="https://www.instagram.com/coffee.katha/" target="_blank" rel="noopener">@coffee.katha on Instagram ↗</a></p>
+    </div>
+    <div class="challenge">
+      <h4>The vanilla trap</h4>
+      <p>The coffee was great, but the communication felt templated. The brand needed a clear place in the market and a voice that felt like home.</p>
+      <div class="vs"><div><small>Vanilla</small>Templated café posts</div><div><small>No Vanilla</small>Filter-coffee rituals, nostalgia and Sunday Kathà</div></div>
+    </div>
+  </div>
+
+  <div class="metrics reveal">
+    <div class="metric"><b>Month 1</b><span>Repositioned the brand into the mid-premium segment</span></div>
+    <div class="metric"><b>5 → 12</b><span>outlets, from 2025 to end of 2026</span></div>
+    <div class="metric"><b>#1</b><span>Tech-park outlet, which I ideated, is now the top seller</span></div>
+    <div class="metric"><b>2M+ · 400+</b><span>cups served and events hosted by the brand, corporate events included</span></div>
+  </div>
+
+  <div class="did reveal">
+    <div><h5>Found the brand's real audience</h5><p>Worked with the founders on their niche, segment and brand pillars, and repositioned Coffee Kathà as mid-premium in my first month.</p></div>
+    <div><h5>Built a voice from ritual and nostalgia</h5><p>Moved social away from templates toward South Indian tradition, everyday coffee rituals and regional storytelling.</p></div>
+    <div><h5>Sunday Kathà, my own series</h5><p>A recurring format that helped turn the outlets into neighbourhood cafés people remember and come back to.</p></div>
+    <div><h5>Launches that open with a crowd</h5><p>Created the pre-launch reel for the Kokapet outlet. It reached 100k views and brought a rush of footfall after opening.</p></div>
+    <div><h5>Grew through franchise and partnerships</h5><p>Came up with the franchise and tech-park presence. Brought in opportunities like Tarangam by Chapter 30 to put the brand in front of the right audience.</p></div>
+    <div><h5>Ran paid as well as organic</h5><p>Planned and ran Meta ad sets end to end: objectives, budgets, operation and optimisation. Next goal: entering large communities and residential societies.</p></div>
+  </div>
+
+  <figure class="reveal"><div class="shot" data-full="ck-grid.jpg"><img src="ck-grid.jpg" alt="Coffee Kathà Instagram grid: Kokapet launch, filter coffee and cold brew posts"></div>
+  <figcaption>The Instagram feed now: launches, rituals and product stories in one recognisable visual language.</figcaption></figure>
+
+  <div class="reels reveal">
+    <h3>Reels worth watching</h3>
+    <p>These open on Instagram.</p>
+    <div class="reel-grid">
+      <a class="reel feature" href="https://www.instagram.com/reel/Ddl4dqyPbGq/" target="_blank" rel="noopener">
+        <div><div class="k">Viral · 100k+ views</div><div class="t">Kokapet pre-launch reel</div></div>
+        <div class="go"><span class="play">▶</span> Organic, in feed and trial</div>
+      </a>
+      <a class="reel" href="https://www.instagram.com/reel/DcyV-PLlXml/" target="_blank" rel="noopener">
+        <div><div class="k">Partnership</div><div class="t">Tarangam by Chapter 30</div></div>
+        <div class="go"><span class="play">▶</span> Watch</div>
+      </a>
+      <a class="reel" href="https://www.instagram.com/reel/DUfmCPZCMRJ/" target="_blank" rel="noopener">
+        <div><div class="k">Series</div><div class="t">Sunday Kathà, episode I</div></div>
+        <div class="go"><span class="play">▶</span> Watch</div>
+      </a>
+    </div>
+    <details class="more">
+      <summary><span>Extra shots, no vanilla <small>6 more reels</small></span></summary>
+      <div class="reel-grid">
+      <a class="reel" href="https://www.instagram.com/reel/DdG-u4xkyaj/" target="_blank" rel="noopener">
+        <div><div class="k">Partnership</div><div class="t">Tarangam, part 2</div></div>
+        <div class="go"><span class="play">▶</span> Watch</div>
+      </a>
+      <a class="reel" href="https://www.instagram.com/reel/DXBOT6ZjDzI/" target="_blank" rel="noopener">
+        <div><div class="k">Series</div><div class="t">Sunday Kathà, episode II</div></div>
+        <div class="go"><span class="play">▶</span> Watch</div>
+      </a>
+      <a class="reel" href="https://www.instagram.com/reel/Dbx9tGJvJAO/" target="_blank" rel="noopener">
+        <div><div class="k">Concept</div><div class="t">Concept reel 01</div></div>
+        <div class="go"><span class="play">▶</span> Watch</div>
+      </a>
+      <a class="reel" href="https://www.instagram.com/reel/DbLZI0AkVA1/" target="_blank" rel="noopener">
+        <div><div class="k">Concept</div><div class="t">Concept reel 02</div></div>
+        <div class="go"><span class="play">▶</span> Watch</div>
+      </a>
+      <a class="reel" href="https://www.instagram.com/reel/DXTbpoWAB5C/" target="_blank" rel="noopener">
+        <div><div class="k">Concept</div><div class="t">Concept reel 03</div></div>
+        <div class="go"><span class="play">▶</span> Watch</div>
+      </a>
+      <a class="reel" href="https://www.instagram.com/reel/DV09TJoAW3Q/" target="_blank" rel="noopener">
+        <div><div class="k">Concept</div><div class="t">Concept reel 04</div></div>
+        <div class="go"><span class="play">▶</span> Watch</div>
+      </a>
+      </div>
+    </details>
+  </div>
+</div></section>
+
+<!-- ============ MIND 360 ============ -->
+<section class="case" id="mind-360" style="--accent:var(--m3);--soft:var(--m3-soft)"><div class="wrap">
+  <div class="case-head reveal">
+    <div>
+      <div class="num">02 · Mental health tech · Pre-launch</div>
+      <h2>Mind 360</h2>
+      <p class="tag">An online mental health service built for millennials and Gen Z, getting ready for a pan-India launch.</p>
+      <div class="role"><span>Brand strategy</span><span>Product direction</span><span>User testing</span><span>Psychologist liaison</span><span>Team lead (4)</span></div>
+      <p class="meta"><a href="https://mindtalks.in/" target="_blank" rel="noopener">mindtalks.in ↗</a></p>
+    </div>
+    <div class="challenge">
+      <h4>The vanilla trap</h4>
+      <p>Most mental health brands sound like a hospital waiting room. Mind 360 had to sound like the friend who gets it and then helps you find a therapist.</p>
+      <div class="vs"><div><small>Vanilla</small>Stock-photo sadness and "you are not alone" clichés</div><div><small>No Vanilla</small>Receipts, plot twists and Mudita: the language Gen Z already speaks</div></div>
+    </div>
+  </div>
+
+  <div class="metrics reveal">
+    <div class="metric"><b>Pan-India</b><span>launch ahead, with psychologists already onboarded</span></div>
+    <div class="metric"><b>3 modes</b><span>Per-minute pricing for message, audio and video calls</span></div>
+  </div>
+
+  <div class="did reveal">
+    <div><h5>Started from the pain points</h5><p>Researched what young people actually struggle with in mental health care. That gave the brand its direction, its relatability and the right audience.</p></div>
+    <div><h5>Connected brand and product</h5><p>Worked between founders, psychologists and the product team. I brought psychologists' feedback straight into product decisions.</p></div>
+    <div><h5>Tested and improved the product</h5><p>Tested the app and gave feedback to the dev team, which shaped the development and optimisation of several features.</p></div>
+    <div><h5>Led the pre-launch voice</h5><p>Lead the team of 4 running social media as part of the pre-launch strategy, with content that's warm, honest and free of stigma.</p></div>
+  </div>
+
+
+  <div class="two reveal">
+    <figure><div class="shot" data-full="m360-site.jpg"><img src="m360-site.jpg" alt="Mind 360 website hero: An Opportunity to Transform Your Well-being"></div>
+    <figcaption>Website hero, "Your path to clarity," with the four-step journey into therapy.</figcaption></figure>
+    <figure><div class="shot" data-full="m360-grid.jpg"><img src="m360-grid.jpg" alt="Mind 360 Instagram grid with gentle, relatable mental health posts"></div>
+    <figcaption>Pre-launch social: Mudita, overthinking, "a work in progress." Relatable, not clinical.</figcaption></figure>
+  </div>
+</div></section>
+
+<!-- ============ TÉSOUL ============ -->
+<section class="case" id="tesoul" style="--accent:var(--ts);--soft:var(--ts-soft)"><div class="wrap">
+  <div class="case-head reveal">
+    <div>
+      <div class="num">03 · Wellness · Launch</div>
+      <h2>TéSoul Blends</h2>
+      <p class="tag">A premium modern wellness tea brand: Ayurvedic-inspired botanical blends for everyday rituals.</p>
+      <div class="role"><span>Branding</span><span>Pre &amp; post-launch strategy</span><span>Website creative</span><span>Performance ads</span><span>Partnerships</span></div>
+      <p class="meta"><a href="https://tesoulblends.com/" target="_blank" rel="noopener">tesoulblends.com ↗</a></p>
+    </div>
+    <div class="challenge">
+      <h4>The vanilla trap</h4>
+      <p>Wellness tea is a crowded, specific niche. The job was to understand it deeply and turn that into a brand voice people relate to.</p>
+      <div class="vs"><div><small>Vanilla</small>Generic "wellness tea" claims</div><div><small>No Vanilla</small>Ayurveda-rooted rituals for real, messy days</div></div>
+    </div>
+  </div>
+
+  <div class="metrics reveal">
+    <div class="metric"><b>Pre-launch revenue</b><span>Had TéSoul served as "premium tea" at Coffee Kathà, so it earned before launch</span></div>
+    <div class="metric"><b>~12,000</b><span>cups of TéSoul served</span></div>
+    <div class="metric"><b>Adika</b><span>Positioned TéSoul in post-workout wellness at yoga and wellness centres</span></div>
+  </div>
+
+  <div class="did reveal">
+    <div><h5>Studied the craft</h5><p>Went deep into Ayurveda, tea rituals, modern wellness routines and what each ingredient does. The content concepts came out of that and gave the brand its direction.</p></div>
+    <div><h5>Shaped the visuals</h5><p>Contributed design elements to the website and led the creative direction and staging concepts for the brand's final visuals.</p></div>
+    <div><h5>Ran targeted launch ads</h5><p>Defined the target audience. I'm running targeted, optimised ads through pre-launch and launch.</p></div>
+    <div><h5>Made wellness feel everyday</h5><p>"POV: life is falling apart but my tea ritual is non-negotiable." Wellness for the days you need it most, not just the picture-perfect ones.</p></div>
+  </div>
+
+  <figure class="reveal"><div class="shot" data-full="ts-hero.jpg"><img src="ts-hero.jpg" alt="TéSoul website hero: Ayurvedic-Inspired Botanical Blends For Modern Wellness Rituals"></div>
+  <figcaption>Website hero: "Ayurvedic-Inspired Botanical Blends for Modern Wellness Rituals."</figcaption></figure>
+  <div class="two reveal" style="margin-top:20px">
+    <figure><div class="shot" data-full="ts-products.jpg"><img src="ts-products.jpg" alt="TéSoul product range: Sukla, Neela, Tejas, Sindhoori"></div>
+    <figcaption>Product staging: Sukla, Neela, Tejas and Sindhoori blends.</figcaption></figure>
+    <figure><div class="shot" data-full="ts-grid.jpg"><img src="ts-grid.jpg" alt="TéSoul Instagram grid"></div>
+    <figcaption>Social: tea rituals, ingredient stories and everyday moments.</figcaption></figure>
+  </div>
+</div></section>
+
+<!-- ============ OPEN MINDS ============ -->
+<section class="case" id="open-minds" style="--accent:var(--om);--soft:var(--om-soft)"><div class="wrap">
+  <div class="case-head reveal">
+    <div>
+      <div class="num">04 · Child development · Social strategy</div>
+      <h2>Open Minds Child Vista</h2>
+      <p class="tag">A child development centre offering therapy and early support. I was their social media strategist and manager.</p>
+      <div class="role"><span>Social strategy</span><span>Content</span><span>Targeted ads</span><span>Therapist collaboration</span></div>
+    </div>
+    <div class="challenge">
+      <h4>The vanilla trap</h4>
+      <p>Speak to worried parents about cerebral palsy, dyslexia and speech delays with care and without fear, and still grow the centre.</p>
+      <div class="vs"><div><small>Vanilla</small>Fear-led, clinical posts</div><div><small>No Vanilla</small>Parent-first explainers that reassure</div></div>
+    </div>
+  </div>
+
+  <div class="metrics reveal">
+    <div class="metric"><b>+40%</b><span>more clients in the months after I started</span></div>
+    <div class="metric"><b>4 → 1 week</b><span>to understand the brand's sensitivities and deliver its strategy</span></div>
+  </div>
+
+  <div class="did reveal">
+    <div><h5>Learned from the experts</h5><p>Worked with child therapists and the founders to understand the brand and build its strategy.</p></div>
+    <div><h5>Ran ads that reached the right parents</h5><p>Built targeted ad sets that brought in clients. Content like "Your child isn't bad at reading. They read differently." replaced stigma with reassurance.</p></div>
+  </div>
+
+  <figure class="reveal"><div class="shot" data-full="om-grid.jpg"><img src="om-grid.jpg" alt="Open Minds Child Vista Instagram grid: cerebral palsy, speech therapy and dyslexia explainers"></div>
+  <figcaption>Parent-first explainers on cerebral palsy, speech and language therapy, sensory sensitivity and dyslexia.</figcaption></figure>
+</div></section>
+
+<section class="closing"><div class="wrap reveal">
+  <h2>Done with <em>vanilla?</em></h2>
+  <div class="eyebrow" style="margin-bottom:16px">Let's work together</div>
+  <p>I'm open to brand strategy, creative direction and growth work with founders who'd rather be remembered than be safe.</p>
+  <p style="margin-top:26px;font-family:Fraunces,serif;font-size:20px;color:var(--ink)">Sai Lahari Jayareddygari</p>
+</div></section>
+
+<footer><div class="wrap">NO VANILLA. · © 2026 Sai Lahari Jayareddygari · Brand Strategy, Creative Direction, Growth · Hyderabad</div></footer>
+
+<div class="lb" id="lb"><img alt=""></div>
+
+<script>
+  const lb=document.getElementById('lb'), lbImg=lb.querySelector('img');
+  document.querySelectorAll('.shot').forEach(s=>s.addEventListener('click',()=>{lbImg.src=s.dataset.full;lbImg.alt=s.querySelector('img').alt;lb.classList.add('on')}));
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+  const io=('IntersectionObserver' in window)?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12}):null;
+  document.querySelectorAll('.reveal').forEach(el=>io?io.observe(el):el.classList.add('in'));
+</script>
+</body>
+</html>
